@@ -74,7 +74,8 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:text="Random Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -103,7 +104,8 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:text="Number Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -173,14 +175,17 @@
 
 
                         <TextView
+                            android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
+
                             android:text="Random Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -206,9 +211,11 @@
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
+
                             android:text="Number Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -278,14 +285,17 @@
 
 
                         <TextView
+                            android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
+
                             android:text="Random Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -305,14 +315,17 @@
 
 
                         <TextView
+                            android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
+
                             android:text="Number Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -389,7 +402,8 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:text="Random Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -417,7 +431,8 @@
                             android:fontFamily="sans-serif-smallcaps"
                             android:text="Number Facts"
                             android:textColor="#ffffff"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
