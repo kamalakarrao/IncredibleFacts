@@ -57,6 +57,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:id="@+id/trivia_random"
                         android:orientation="vertical">
 
                         <ImageView
@@ -85,7 +86,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-
+                        android:id="@+id/trivia_quest"
                         android:orientation="vertical">
 
                         <ImageView
@@ -164,7 +165,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-
+                        android:id="@+id/date_random"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -195,6 +196,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:id="@+id/date_quest"
 
                         android:gravity="center"
                         android:orientation="vertical">
@@ -274,7 +276,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-
+                        android:id="@+id/year_random"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -306,6 +308,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:id="@+id/year_quest"
                         android:orientation="vertical">
 
                         <ImageView
@@ -363,7 +366,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
                     android:gravity="bottom"
-                    android:text="Numbers"
+                    android:text="Math"
                     android:textColor="#ffffff"
                     android:textSize="34sp" />
 
@@ -384,6 +387,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:id="@+id/math_random"
 
                         android:gravity="center"
                         android:orientation="vertical">
@@ -413,6 +417,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:id="@+id/math_quest"
 
                         android:gravity="center"
                         android:orientation="vertical">
