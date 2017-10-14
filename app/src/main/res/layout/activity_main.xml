@@ -97,12 +97,13 @@
 
 
                         <TextView
+                            android:id="@+id/textView4"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
-                            android:text="Number Facts"
+                            android:text="Quest Facts"
                             android:textColor="#ffffff"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -212,7 +213,7 @@
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
 
-                            android:text="Number Facts"
+                            android:text="Quest Facts"
                             android:textColor="#ffffff"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -322,7 +323,7 @@
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
 
-                            android:text="Number Facts"
+                            android:text="Quest Facts"
                             android:textColor="#ffffff"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -424,12 +425,13 @@
 
 
                         <TextView
+                            android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-smallcaps"
-                            android:text="Number Facts"
+                            android:text="Quest Facts"
                             android:textColor="#ffffff"
                             android:textSize="14sp"
                             android:textStyle="bold" />
