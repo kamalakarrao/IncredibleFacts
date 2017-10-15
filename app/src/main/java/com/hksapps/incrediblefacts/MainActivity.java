@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        showRandomFacts(response.toString(), type);
+                        showRandomFacts(response, type);
 
                     }
                 }, new Response.ErrorListener() {
@@ -216,13 +216,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        showQuestFacts(type, response.toString(), num);
+                        showQuestFacts(type, response, num);
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("Error.Response", error.toString());
+
 
 
                 showQuestFacts(type, "Error Occured", num);
