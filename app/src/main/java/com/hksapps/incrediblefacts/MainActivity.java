@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.android.volley.Request;
@@ -18,9 +17,7 @@ import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String result;
     private LinearLayout triviaRandom, triviaQuest, dateRandom, dateQuest, yearRandom, yearQuest, mathRandom, mathQuest;
-    private EditText customEdittext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
