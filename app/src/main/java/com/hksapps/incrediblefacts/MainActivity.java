@@ -1,23 +1,18 @@
 package com.hksapps.incrediblefacts;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
-import com.github.javiersantos.materialstyleddialogs.enums.Style;
 import com.yarolegovich.lovelydialog.LovelyStandardDialog;
 import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 
@@ -134,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        showRandomFacts(type.toUpperCase(), response.toString(), type);
+                        showRandomFacts(response.toString(), type);
 
                     }
                 }, new Response.ErrorListener() {
@@ -143,15 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Error.Response", error.toString());
 
 
-                new MaterialStyledDialog.Builder(MainActivity.this)
-                        .setTitle(type.toUpperCase())
-                        .setDescription("Error Occured!")
-                        .setStyle(Style.HEADER_WITH_TITLE)
-                        .setNeutralText("Close")
-
-
-                        //.setStyle(Style.HEADER_WITH_TITLE)
-                        .show();
+                showRandomFacts("Error Occured", type);
             }
         });
         queue.add(getRequest);
@@ -159,31 +146,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void showRandomFacts(String title, String description, final String type) {
+    private void showRandomFacts(String description, final String type) {
 
-        new MaterialStyledDialog.Builder(MainActivity.this)
-                .setTitle(title)
-                .setDescription(description)
-                .setStyle(Style.HEADER_WITH_TITLE)
-                .setPositiveText("Randomize")
-                .onPositive(new MaterialDialog.SingleButtonCallback() {
+        new LovelyStandardDialog(this)
+                .setTopColorRes(R.color.colorAccent)
+                .setTitle(type.toUpperCase())
+                .setMessage(description)
+                .setPositiveButton("Randomize", new View.OnClickListener() {
                     @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                    public void onClick(View v) {
                         getRandomFactsFromApi(type);
                     }
                 })
-                .setNegativeText("Done")
-                //.setStyle(Style.HEADER_WITH_TITLE)
+                .setNegativeButton("Close", null)
                 .show();
+
 
     }
 
 
     private void askForQuestNumber(final String type) {
-        new LovelyTextInputDialog(this, R.style.AppTheme)
+        new LovelyTextInputDialog(this)
                 .setTopColorRes(R.color.colorAccent)
                 .setTitle("Quest Facts")
-                .setMessage("Enter a number for Quest Fact")
+                .setMessage("Enter a number for " + type + " Quest Fact")
+                .setInputType(2)
                 .setInputFilter("Please Enter a number", new LovelyTextInputDialog.TextFilter() {
                     @Override
                     public boolean check(String text) {
@@ -204,15 +191,15 @@ public class MainActivity extends AppCompatActivity {
 
         new LovelyStandardDialog(this)
                 .setTopColorRes(R.color.colorAccent)
-                .setTitle(type)
+                .setTitle(type.toUpperCase())
                 .setMessage(description)
                 .setPositiveButton("Next", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-getQuestFactsFromApi(String.valueOf(Integer.parseInt(num)+1),type);
+                        getQuestFactsFromApi(String.valueOf(Integer.parseInt(num) + 1), type);
                     }
                 })
-                .setNegativeButton(android.R.string.no, null)
+                .setNegativeButton("Close", null)
                 .show();
 
     }
@@ -229,7 +216,7 @@ getQuestFactsFromApi(String.valueOf(Integer.parseInt(num)+1),type);
                     @Override
                     public void onResponse(String response) {
 
-                        showQuestFacts(type, response.toString(),num);
+                        showQuestFacts(type, response.toString(), num);
 
                     }
                 }, new Response.ErrorListener() {
@@ -238,7 +225,7 @@ getQuestFactsFromApi(String.valueOf(Integer.parseInt(num)+1),type);
                 Log.d("Error.Response", error.toString());
 
 
-                showQuestFacts(type, "Error Occured",num);
+                showQuestFacts(type, "Error Occured", num);
             }
         });
         queue.add(getRequest);
