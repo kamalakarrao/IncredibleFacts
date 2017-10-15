@@ -17,21 +17,21 @@ import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout triviaRandom, triviaQuest, dateRandom, dateQuest, yearRandom, yearQuest, mathRandom, mathQuest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        triviaRandom = (LinearLayout) findViewById(R.id.trivia_random);
-        triviaQuest = (LinearLayout) findViewById(R.id.trivia_quest);
-        dateRandom = (LinearLayout) findViewById(R.id.date_random);
-        dateQuest = (LinearLayout) findViewById(R.id.date_quest);
-        yearRandom = (LinearLayout) findViewById(R.id.year_random);
-        yearQuest = (LinearLayout) findViewById(R.id.year_quest);
-        mathRandom = (LinearLayout) findViewById(R.id.math_random);
-        mathQuest = (LinearLayout) findViewById(R.id.math_quest);
+
+        LinearLayout triviaRandom = (LinearLayout) findViewById(R.id.trivia_random);
+        LinearLayout triviaQuest = (LinearLayout) findViewById(R.id.trivia_quest);
+        LinearLayout dateRandom = (LinearLayout) findViewById(R.id.date_random);
+        LinearLayout dateQuest = (LinearLayout) findViewById(R.id.date_quest);
+        LinearLayout yearRandom = (LinearLayout) findViewById(R.id.year_random);
+        LinearLayout yearQuest = (LinearLayout) findViewById(R.id.year_quest);
+        LinearLayout mathRandom = (LinearLayout) findViewById(R.id.math_random);
+        LinearLayout mathQuest = (LinearLayout) findViewById(R.id.math_quest);
 
 
         triviaRandom.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +219,6 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
 
 
                 showQuestFacts(type, "Error Occured", num);
