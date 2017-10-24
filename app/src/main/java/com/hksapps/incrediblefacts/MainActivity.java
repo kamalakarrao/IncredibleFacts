@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Error.Response", error.toString());
 
 
-                showRandomFacts("Error Occured. Please try again", type);
+                showRandomFacts("Error Occurred. Please try again", type);
             }
         });
         queue.add(getRequest);
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
 
-                showQuestFacts(type, "Error Occured. Please try again", num);
+                showQuestFacts(type, "Error Occurred. Please try again", num);
             }
         });
         queue.add(getRequest);
