@@ -36,11 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         triviaRandom.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-
-                getRandomFactsFromApi("trivia");
-
+            public void onClick(View view) {getRandomFactsFromApi("trivia");
             }
         });
 
@@ -48,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
         dateRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getRandomFactsFromApi("date");
-
             }
         });
 
@@ -58,10 +52,7 @@ public class MainActivity extends AppCompatActivity {
         yearRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 getRandomFactsFromApi("year");
-
             }
         });
 
@@ -69,10 +60,7 @@ public class MainActivity extends AppCompatActivity {
         mathRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 getRandomFactsFromApi("math");
-
             }
         });
 
@@ -113,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void getRandomFactsFromApi(final String type) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -135,13 +122,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Error.Response", error.toString());
 
 
-                showRandomFacts("Error Occured", type);
+                showRandomFacts("Error Occured. Please try again", type);
             }
         });
         queue.add(getRequest);
 
     }
-
 
     private void showRandomFacts(String description, final String type) {
 
@@ -160,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
     private void askForQuestNumber(final String type) {
         new LovelyTextInputDialog(this)
@@ -184,23 +169,6 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void showQuestFacts(final String type, String description, final String num) {
-
-        new LovelyStandardDialog(this)
-                .setTopColorRes(R.color.colorAccent)
-                .setTitle(type.toUpperCase())
-                .setMessage(description)
-                .setPositiveButton("Next", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        getQuestFactsFromApi(String.valueOf(Integer.parseInt(num) + 1), type);
-                    }
-                })
-                .setNegativeButton("Close", null)
-                .show();
-
-    }
-
     private void getQuestFactsFromApi(final String num, final String type) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -221,10 +189,29 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
 
-                showQuestFacts(type, "Error Occured", num);
+                showQuestFacts(type, "Error Occured. Please try again", num);
             }
         });
         queue.add(getRequest);
     }
+
+    private void showQuestFacts(final String type, String description, final String num) {
+
+        new LovelyStandardDialog(this)
+                .setTopColorRes(R.color.colorAccent)
+                .setTitle(type.toUpperCase())
+                .setMessage(description)
+                .setPositiveButton("Next", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getQuestFactsFromApi(String.valueOf(Integer.parseInt(num) + 1), type);
+                    }
+                })
+                .setNegativeButton("Close", null)
+                .show();
+
+    }
+
+
 
 }
