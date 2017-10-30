@@ -148,11 +148,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void askForQuestNumber(final String type) {
+
+        int inputTypeValue = 2;
+
+        if(type.toLowerCase().equals("date")){
+            inputTypeValue = 4;
+
+        }
+
         new LovelyTextInputDialog(this)
                 .setTopColorRes(R.color.colorAccent)
                 .setTitle("Quest Facts")
                 .setMessage("Enter a number for " + type + " Quest Fact")
-                .setInputType(2)
+                .setInputType(inputTypeValue)
                 .setInputFilter("Please Enter a number", new LovelyTextInputDialog.TextFilter() {
                     @Override
                     public boolean check(String text) {
